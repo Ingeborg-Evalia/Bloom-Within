@@ -1,0 +1,1046 @@
+/* BLOOM WITHIN - FARVER */
+
+:root {
+  --forest: #324237;
+  --sage: #A6B09C;
+  --clay: #C9926E;
+  --sand: #E7D8C4;
+  --cream: #F5EFE6;
+}
+
+/* GENERELT DESIGN */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--cream);
+  color: var(--forest);
+  font-family: Arial, sans-serif;
+  line-height: 1.7;
+}
+
+h1, h2, h3 {
+  font-family: Georgia, serif;
+  line-height: 1.3;
+}
+
+a {
+  color: inherit;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--clay);
+  outline-offset: 4px;
+}
+
+/* NAVIGATION */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  padding: 20px 7%;
+  background-color: var(--cream);
+}
+
+.logo {
+  font-family: Georgia, serif;
+  font-size: 25px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* ===================================
+   Forside
+=================================== */
+
+.hero {
+  padding: 110px 20px;
+  text-align: center;
+  background-color: var(--sand);
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 12px;
+}
+
+.hero h1 {
+  font-size: clamp(32px, 5vw, 56px);
+  max-width: 750px;
+  margin: 20px auto;
+}
+
+.hero-text {
+  max-width: 550px;
+  margin: 20px auto 35px;
+}
+
+.button {
+  display: inline-block;
+  background-color: var(--forest);
+  color: #324237;
+  padding: 13px 28px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color:#A6B09C;
+}
+
+/* SEKTIONER */
+
+.categories,
+.blog-section,
+.about {
+  padding: 75px 7%;
+  text-align: center;
+}
+
+.category-grid,
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  max-width: 1100px;
+  margin: 35px auto 0;
+}
+
+.category-card {
+  background-color: var(--sand);
+  padding: 35px 20px;
+  border-radius: 8px;
+}
+
+.category-card span {
+  font-size: 36px;
+}
+
+.blog-section {
+  background-color:#F5EFE6;
+}
+
+.blog-card {
+  background-color: var(--cream);
+  padding: 25px;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.post-type {
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.about {
+  background-color: var(--sage);
+}
+
+.about p {
+  max-width: 650px;
+  margin: 15px auto;
+}
+
+/* FOOTER */
+
+footer {
+  background-color: var(--forest);
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+}
+
+/* MOBIL */
+
+@media (max-width: 700px) {
+  .header {
+    flex-direction: column;
+  }
+
+  .nav-links {
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .hero {
+    padding: 75px 20px;
+  }
+
+  .category-grid,
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* TYPOGRAFI */
+
+body {
+  font-family: "DM Sans", Arial, sans-serif;
+}
+
+h1, h2, h3, .logo {
+  font-family: "Cormorant Garamond", Georgia, serif;
+}
+
+h2 {
+  font-size: clamp(32px, 4vw, 46px);
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+
+/* LÆS MERE KNAPPER */
+
+.read-more {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 11px 20px;
+
+  background-color: #324237;
+  color: #FFFFFF;
+
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
+}
+
+.read-more:hover {
+  background-color: #243329;
+}
+
+.read-more:focus-visible {
+  outline: 3px solid #C9926E;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .read-more {
+    transition: none;
+  }
+}
+
+
+/* NY HERO-SEKTION */
+
+.hero {
+  min-height: 820px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 100px 25px;
+
+  background-image:
+    linear-gradient(
+      rgba(20, 35, 25, 0.55),
+      rgba(20, 35, 25, 0.55)
+    ),
+    url("images/hero.jpg");
+
+  background-size: cover;
+  background-position: center;
+
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: clamp(42px, 6vw, 76px);
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.hero-text {
+  font-size: 17px;
+  max-width: 560px;
+}
+
+.hero .button {
+  background-color: #F5EFE6;
+  color: #324237;
+  font-weight: 600;
+}
+
+.hero .button:hover {
+  background-color: #E7D8C4;
+}
+
+/* BLOGKORT */
+
+.blog-card {
+  padding: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #F5EFE6;
+  text-align: left;
+}
+
+.blog-image {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  display: block;
+}
+
+.blog-content {
+  padding: 25px;
+}
+
+.post-type {
+  color: #79503D;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+}
+
+.blog-card h3 {
+  margin: 10px 0;
+}
+
+.reading-time {
+  display: block;
+  margin-top: 20px;
+  font-size: 13px;
+  color: #4B594F;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 1100px;
+  margin: 35px auto;
+}
+.blog-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.read-more {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+
+/* BLOGKORT - ENS OPSTILLING */
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+  align-items: stretch;
+}
+
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Ens størrelse på billeder */
+
+.blog-image {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Indhold i blogkort */
+
+.blog-content {
+  display: grid;
+  grid-template-rows:
+    minmax(3em, auto)
+    minmax(3.5em, auto)
+    1fr
+    auto
+    auto;
+
+  gap: 15px;
+  flex: 1;
+  padding: 25px;
+}
+
+/* Fjern forskellige standardmargener */
+
+.blog-content .post-type,
+.blog-content h3,
+.blog-description,
+.reading-time {
+  margin: 0;
+}
+
+/* Overskrifter */
+
+.blog-content h3 {
+  font-size: 26px;
+  line-height: 1.25;
+}
+
+/* Beskrivelser */
+
+.blog-description {
+  line-height: 1.7;
+}
+
+/* Læsetid */
+
+.reading-time {
+  font-size: 13px;
+  color: #4B594F;
+}
+
+/* Knapper */
+
+.blog-content .read-more {
+  justify-self: start;
+  align-self: end;
+  margin-top: 0;
+}
+
+
+/* OM BLOOM WITHIN */
+
+.about {
+  background-color: #A6B09C;
+  padding: 45px 7%;
+  text-align: left;
+}
+
+.about-container {
+  max-width: 1000px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  align-items: center;
+  gap: 50px;
+}
+
+/* TEKST */
+
+.about-text {
+  max-width: 500px;
+}
+
+.about-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #654332;
+}
+
+.about-text h2 {
+  font-size: clamp(30px, 4vw, 42px);
+  margin: 10px 0 20px;
+}
+
+.about-text p {
+  margin: 0 0 15px;
+  line-height: 1.7;
+}
+
+/* KNAP */
+
+.about-button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 22px;
+
+  background-color: #324237;
+  color: #FFFFFF;
+
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 5px;
+}
+
+.about-button:hover {
+  background-color: #243329;
+}
+
+/* BILLEDE */
+
+.about-image img {
+  width: 100%;
+  max-height: 260px;
+  object-fit: contain;
+  display: block;
+}
+
+
+/* MOBILVISNING */
+
+@media (max-width: 700px) {
+
+  .hero {
+    min-height: 500px;
+    padding: 70px 20px;
+  }
+
+  .hero h1 {
+    font-size: 44px;
+  }
+
+  .hero-text {
+    font-size: 16px;
+  }
+
+  .blog-image {
+    height: 210px;
+  }
+
+  .categories,
+  .blog-section,
+  .about {
+    padding: 55px 20px;
+  }
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-content {
+    grid-template-rows: auto auto 1fr auto auto;
+  }
+ .about {
+    padding: 40px 20px;
+  }
+
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .about-image img {
+    max-height: 180px;
+  }
+
+}
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.logo img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+}
+
+.logo span {
+    font-family: Georgia, serif;
+    font-size: 26px;
+    color: #324237;
+    font-weight: 500;
+}
+
+
+
+/* ===================================
+   Historien bag
+=================================== */
+
+.about-page {
+  --about-forest: #324237;
+  --about-sage: #A6B09C;
+  --about-clay: #C9926E;
+  --about-sand: #E7D8C4;
+  --about-parchment: #F5EFE6;
+
+  background-color: var(--about-parchment);
+  color: var(--about-forest);
+  font-family: "DM Sans", sans-serif;
+}
+
+.about-page *,
+.about-page *::before,
+.about-page *::after {
+  box-sizing: border-box;
+}
+
+.about-page .about-container {
+  width: min(1120px, 90%);
+  margin-inline: auto;
+}
+
+/* TYPOGRAPHY */
+
+.about-page .about-eyebrow {
+  display: block;
+  color: #9B6545;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.about-page h1,
+.about-page h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--about-forest);
+}
+
+.about-page .about-text h2,
+.about-page .about-centered h2 {
+  font-size: clamp(2.5rem, 4vw, 3.8rem);
+  margin: 0 0 25px;
+}
+
+.about-page .about-text p,
+.about-page .about-centered p {
+  font-size: 1rem;
+  line-height: 1.9;
+  margin: 0 0 18px;
+}
+
+/* HERO */
+
+
+/* HERO - OM OS */
+
+
+/* ==================================
+   OM OS - HERO
+================================== */
+
+.about-page .about-hero {
+  min-height: 85vh;
+  min-height: 85svh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 110px 20px;
+  text-align: center;
+
+  background:
+    linear-gradient(
+      rgba(20, 30, 23, 0.55),
+      rgba(20, 30, 23, 0.55)
+    ),
+    url("images/om-os-hero.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Lille tekst øverst */
+
+.about-page .about-hero .eyebrow {
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 12px;
+  margin: 0 0 20px;
+}
+
+/* Overskrift */
+
+.about-page .about-hero h1 {
+  color: white;
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(48px, 6vw, 86px);
+  font-weight: 600;
+  line-height: 1.1;
+
+  max-width: 950px;
+  margin: 20px auto 35px;
+}
+
+/* Beskrivelse */
+
+.about-page .about-hero .hero-text {
+  color: white;
+  font-family: "DM Sans", sans-serif;
+
+  font-size: clamp(16px, 1.8vw, 22px);
+  line-height: 1.8;
+
+  max-width: 750px;
+  margin: 0 auto 45px;
+}
+
+/* Knap */
+
+.about-page .about-hero .button {
+  display: inline-block;
+  background-color: var(--parchment, #F5EFE6);
+  color: var(--forest, #324237);
+
+  padding: 15px 32px;
+  border-radius: 4px;
+
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.about-page .about-hero .button:hover {
+  background-color: #E7D8C4;
+}
+
+/* MOBIL */
+
+@media (max-width: 768px) {
+
+  .about-page .about-hero {
+    min-height: 75svh;
+    padding: 80px 20px;
+  }
+
+  .about-page .about-hero h1 {
+    font-size: clamp(38px, 9vw, 56px);
+    margin-bottom: 25px;
+  }
+
+  .about-page .about-hero .hero-text {
+    font-size: 16px;
+    margin-bottom: 35px;
+  }
+
+}
+
+
+
+
+.about-page .about-button {
+  display: inline-block;
+  background: var(--about-forest);
+  color: #FFFFFF;
+  padding: 15px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.about-page .about-button:hover {
+  background: #455B4B;
+  transform: translateY(-3px);
+}
+
+.about-page .about-button:focus-visible {
+  outline: 3px solid var(--about-clay);
+  outline-offset: 4px;
+}
+
+/* CONTENT SECTIONS */
+
+.about-page .about-section {
+  padding: 110px 0;
+}
+
+.about-page .about-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: 80px;
+}
+
+
+.about-page .about-image {
+  width: 520px;
+  max-width: 100%;
+  height: 460px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.about-page .about-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+}
+
+.about-page .about-sand {
+  background: var(--about-sand);
+}
+
+.about-page .about-sage {
+  background: var(--about-sage);
+}
+
+.about-page .about-centered {
+  max-width: 760px;
+  text-align: center;
+}
+
+.about-page .about-emphasis {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2rem !important;
+  font-style: italic;
+  font-weight: 600;
+  margin-top: 30px !important;
+}
+
+/* ENDING */
+
+.about-page .about-ending {
+  background-color:#A6B09C;
+  padding: 100px 0;
+  color: #324237;
+}
+
+.about-page .about-ending-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: 80px;
+}
+
+
+
+.about-page .about-ending-text {
+  text-align: left;
+}
+
+.about-page .about-ending .about-eyebrow {
+  color: #79503A;
+  margin-bottom: 25px;
+}
+
+.about-page .about-ending h2 {
+  color: #324237;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.8rem, 4vw, 4rem);
+  line-height: 1.15;
+  margin-bottom: 30px;
+}
+
+.about-page .about-ending p {
+  color: #324237;
+  font-size: 1.05rem;
+  line-height: 1.9;
+  margin-bottom: 20px;
+}
+
+
+.about-page .about-ending .about-signature {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2rem;
+  font-style: italic;
+  margin-top: 35px;
+}
+
+.about-page .about-ending-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-page .about-ending-image img {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  object-fit: contain;
+}
+
+
+/* MOBIL */
+
+@media (max-width: 768px) {
+  .about-page .about-hero {
+    min-height: 550px;
+    padding: 80px 20px;
+  }
+
+  .about-page .about-hero h1 {
+    font-size: clamp(2.8rem, 9vw, 4rem);
+  }
+
+  .about-page .about-hero p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-page .about-ending {
+    padding: 65px 0;
+  }
+
+  .about-page .about-ending-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-page .about-ending-text {
+    text-align: center;
+  }
+
+  .about-page .about-ending-image img {
+    max-width: 230px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-page .about-hero {
+    min-height: 450px;
+    padding: 90px 0;
+  }
+
+  .about-page .about-section {
+    padding: 65px 0;
+  }
+
+  .about-page .about-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .about-page .about-image img {
+    height: 340px;
+  }
+
+  .about-page .about-sand .about-image {
+    grid-row: 1;
+  }
+
+  .about-page .about-text h2,
+  .about-page .about-centered h2 {
+    font-size: 2.7rem;
+  }
+
+  .about-page .about-ending {
+    padding: 75px 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-page .about-button {
+    transition: none;
+  }
+
+  .about-page .about-button:hover {
+    transform: none;
+  }
+}
+
+
+/* Ovale billeder på mobil */
+
+
+@media (max-width: 768px) {
+
+  .about-page .about-image {
+    width: 480px;
+    max-width: 90%;
+    height: 320px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+
+  .about-page .about-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    aspect-ratio: auto;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+}
+
+
+
+/* ===================================
+   Blogindlæg - Overtænkning
+=================================== */
+
+.article-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 70px 25px;
+}
+
+.article-page h1 {
+  font-size: clamp(36px, 6vw, 60px);
+}
+
+.article-page h2 {
+  margin-top: 40px;
+}
+
+.article-page p {
+  line-height: 1.9;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 35px;
+  color: #324237;
+  font-weight: 600;
+}
